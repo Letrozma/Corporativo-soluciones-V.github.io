@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo, Cariño</title>
+    <style>
+        /* Estilo para el fondo */
+        body {
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEg8PEA8QEBAQDw8PEA8PDw8PDw8PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJhABAQEAAQEHBAMAAAAAAAAAAAERAvAhMUFRYXGBkdHh8aGxwf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDr600oBhUApq6AAAAAYaH2AwKbAA0A0QgC0AQkU0EFSAGgAFgCpQgKioAogKhDlQXCgCLiKBASUFgQ0A0iYCiKAUQCRQBKsRdASxSAgLAKkDQKtoAlJFMBAKCmBAAlSgtpKSAGoRQQDAAXAEhqwCVABQAAALAASFWgIEICgAAgCpiyAlUpAEq2gItLQAhUBUq4nYACgIAKlhKsoIqVYCKh16goRKCkADS1FACABUADQBYIQGkxNUEiiApRKCmpFwApp+gSLoQEVAFIkgCwADBCApSUAokUAggKJFoJasTrsAWCUBcCoC6goAi0AIAQqRQRcIAi1MAVc6xMT6gVSlA0TF0CIugIauIAsOvYAAAMCAQ00BFEAWIuggsMBC1UBYABBOMUEXDACAgC4AEEkXARTCgQQAi1ABcIAi6VICotQFNAEFSgqCgamqYAmmEA+T+RQSKi0CJimAIoCUC/2BIqWKAhTAUSLQEqwwE0UAkExQRYUAgJQXUxYAhqlBFxIoItEkBYQxABQAwAQVACrDQMJOvL7p1+AFDQEWIYAsogKUQCeq9eiLYBEUlAA0CFNQDFACwlEBU/SgB3JhngAugAABQxAXQgBoJQKsqLIBqKAh2qlBQAKCQFqKAmmqgCxFBNBYCU4kWgGCaCylRdAEigUkM68kBdQAULEwFgigIKBIESgLABFiH0BQICaLgCLqLIAGoALQAEBZBIAVaJQVIugAGAFAASKAJQDViLKCKlUANQFSqmALKgDVZABQBCgCcTn3AC1QA82QA5d6wATz9lvdEAL4N8QASdwAvH/Dj4/AAM8AA8vk4gBF4+PsAJSgC8u75SeIARqgDNagA//9k='); /* Fondo de corazones */
+            background-color: #f8d7da;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            color: #b30000;
+            text-align: center;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 3em;
+            color: #ff0000;
+            text-shadow: 2px 2px #000000;
+            margin-top: 50px;
+        }
+
+        /* Contenedor de la galería */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+
+        /* Estilo para cada imagen */
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.5xs;
+        }
+
+        /* Efecto de zoom al pasar el ratón */
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 80%;
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Imagen en modal */
+        .modal-content img {
+            width: auto;
+            height: 500px;
+            border-radius: 20px;
+        }
+
+        /* Cerrar botón */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título principal -->
+    <h1>Te amo cariño</h1>
+    <h2>Aprendi un nuevo idioma para hacer esto jsjsjs</h2>
+
+    <!-- Galería de imágenes -->
+    <div class="image-gallery">
+        <!-- Agrega tus imágenes aquí -->
+        <img src="Imagenes/Foto 1.jpeg" alt="Foto 1" onclick="openModal('Imagenes/Foto 1.jpeg', 'Me encanta comer maruchanes contigo jsjsjs')">
+        <img src="Imagenes/Foto 2.jpeg" alt="Foto 2" onclick="openModal('Imagenes/Foto 2.jpeg', 'Un dia hermoso contigo')">
+        <img src="Imagenes/Foto 3.jpeg" alt="Foto 3" onclick="openModal('Imagenes/Foto 3.jpeg', 'Amo pasar mi tiempo contigo')">
+        <img src="Imagenes/Foto 4.jpeg" alt="Foto 4" onclick="openModal('Imagenes/Foto 4.jpeg', 'Gracias por estar a mi lado siempre')">
+        <img src="Imagenes/Foto 5.jpeg" alt="Foto 5" onclick="openModal('Imagenes/Foto 5.jpeg', 'Y aun más siempre jsjs')">
+        <img src="Imagenes/Foto 6.jpeg" alt="Foto 6" onclick="openModal('Imagenes/Foto 6.jpeg', 'Verte fuera de tu salon aun que sea 1 minuto')">
+        <img src="Imagenes/Foto 7.jpeg" alt="Foto 7" onclick="openModal('Imagenes/Foto 7.jpeg', 'O tal vez 2')">
+        <img src="Imagenes/Foto 8.jpeg" alt="Foto 8" onclick="openModal('Imagenes/Foto 8.jpeg', 'Nuestro hijo no biologico jsjsj')">
+        <img src="Imagenes/Foto 9.jpeg" alt="Foto 9" onclick="openModal('Imagenes/Foto 9.jpeg', 'El mejor día')">
+        <img src="Imagenes/Foto 10.jpeg" alt="Foto 10" onclick="openModal('Imagenes/Foto 10.jpeg', 'Recuerdo las primeras fotos que nos tomabamos')">
+        <img src="Imagenes/Foto 11.jpeg" alt="Foto 11" onclick="openModal('Imagenes/Foto 11.jpeg', 'El dia que fuiste a prote')">
+        <img src="Imagenes/Foto 12.jpeg" alt="Foto 12" onclick="openModal('Imagenes/Foto 12.jpeg', 'Te amo mucho princesa')">
+        <img src="Imagenes/Foto 13.jpeg" alt="Foto 13" onclick="openModal('Imagenes/Foto 13.jpeg', 'Te enseñaba a nadar mientras tu me ahogabas jsjsjs')">
+        <img src="Imagenes/Foto 14.jpeg" alt="Foto 14" onclick="openModal('Imagenes/Foto 14.jpeg', 'La gran sorpresa que te hice')">
+        <img src="Imagenes/Foto 15.jpeg" alt="Foto 15" onclick="openModal('Imagenes/Foto 15.jpeg', 'Recuerdo cada llamada contigo')">
+        <img src="Imagenes/Foto 16.jpeg" alt="Foto 16" onclick="openModal('Imagenes/Foto 16.jpeg', 'Siempre tan hermosa')">
+        <img src="Imagenes/Foto 17.jpeg" alt="Foto 17" onclick="openModal('Imagenes/Foto 17.jpeg', 'La primera ve que fuimos a ver el atardecer')">
+        <img src="Imagenes/Foto 18.jpeg" alt="Foto 18" onclick="openModal('Imagenes/Foto 18.jpeg', 'Cuando me metia a tú salon jsjsjs')">
+        <img src="Imagenes/Foto19.jpeg" alt="Foto 19" onclick="openModal('Imagenes/Foto19.jpeg', 'La primera foto que publique para anunciar que tenia novia')">
+        <img src="Imagenes/Foto 20.jpeg" alt="Foto 20" onclick="openModal('Imagenes/Foto 20.jpeg', 'Cuando me llevo horas y horas dibujarte')">
+        <img src="Imagenes/Foto 21.jpeg" alt="Foto 21" onclick="openModal('Imagenes/Foto 21.jpeg', 'cuando nos poniamos en las gradas a comer maruchan jsjsj')">
+        <img src="Imagenes/Foto 22.jpeg" alt="Foto 22" onclick="openModal('Imagenes/Foto 22.jpeg', 'Cuando nos ponemos de locos a bailar en danza')">
+        <img src="Imagenes/Foto 23.jpeg" alt="Foto 23" onclick="openModal('Imagenes/Foto 23.jpeg', 'Se que me cuidas asi como yo siempre te cuido')">
+        <img src="Imagenes/Foto 24.jpeg" alt="Foto 24" onclick="openModal('Imagenes/Foto 24.jpeg', 'Me haces el hombre más feliz del mundo')">
+        <!-- Añade más imágenes con mensajes personalizados -->
+    </div>
+
+    <!-- Modal para mostrar imagen y mensaje -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Imagen ampliada">
+            <p id="modalText" style="margin-top: 15px; font-size: 1.2em; color: #b30000;"></p>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal
+        function openModal(imageSrc, message) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modalText').innerText = message;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
